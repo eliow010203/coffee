@@ -6,7 +6,7 @@ main{padding-top: 120px;}
 .badges{
   width: 130px;
   position: fixed;
-  right: 5px;
+  right: 10px;
   top: 140px;
   z-index: 90;
 }
@@ -14,6 +14,10 @@ main{padding-top: 120px;}
 .badges img{
   border-radius: 10px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .6);
+}
+
+.badges img:last-child{
+  margin-top: 10px;
 }
 
 /* 비주얼 영역 */
@@ -90,3 +94,201 @@ main{padding-top: 120px;}
 .fadein{
   opacity: 0;
 }
+
+/* 공지사항 서식 */
+.notice{
+  height: 62px;
+  background: linear-gradient(right,);
+  background: rgb(51,51,51);
+  background: linear-gradient(90deg, rgba(51,51,51,1) 50%, rgba(246,245,239,1) 50%);
+}
+
+.n_inner{
+  width: 1100px;
+  margin: 0px auto;
+  display: flex;
+}
+
+.n_inner__left{
+  width: 70%;
+  height: 62px;
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+}
+
+.n_inner__left h2{
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 60px;
+}
+
+.s_notice{
+  width: 70%;
+  height: 62px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.s_notice .swiper-slide {
+  text-align: center;
+  font-size: 10px;
+  /* background-color: #fff; */
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.s_notice .swiper-slide a {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.n_inner__left .s_notice .swiper-wrapper a{
+  color: #fff;
+  font-size: 16px;
+  line-height: 42px;
+  text-align: left;
+  text-indent: 27px;
+}
+
+.n_inner__left>a{
+  color: #fff;
+  display: block;
+  
+  margin-left: 110px;
+
+}
+
+.n_inner__left a .addicon{
+  font-size: 30px;
+  line-height: 60px;
+}
+
+.n_inner__right{
+  width: 30%;
+  height: 62px;
+  background-color: #f6f5ef;
+  display: flex;
+  justify-content: center;
+}
+
+.n_inner__right h2{
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  line-height: 60px;
+  padding: 0px 0px 0px 140px;
+}
+
+.n_inner__right i{
+  font-size: 30px;
+  padding: 15px 0px 0px 20px;
+}
+
+/* 프로모션 서식 */
+
+.promotion {
+  display: flex;
+  justify-content: center;
+  background-color: #f6f5ef;
+  overflow: hidden;
+  position: relative;
+  height: 663px;
+  transition: height .4s;
+}
+.promotion.hide {
+  height: 0;
+}
+.promotion .proslide {
+  width: calc(819px * 3 + 10px * 2);
+  height: 553px;
+  flex-shrink: 0;
+}
+.promotion .swiper-slide {
+  position: relative;
+  opacity: .5;
+  transition: 1s;
+}
+.promotion .swiper-slide-active {
+  opacity: 1;
+}
+
+.promotion .btn{
+  width: 130px;
+  padding: 10px;
+  border: 4px;
+  border: 2px solid #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+  transition: 0.4s;
+  color: #333;
+  margin: 0px auto;
+  border-radius: 5px;
+  z-index: 1001;
+  transform: translateY(-50px);
+}
+
+.promotion .btn:hover{
+  color: #fff;
+  background-color: #333;
+}
+
+
+.promotion .swiper-pagination {
+  bottom: 40px !important;
+  z-index: 1;
+}
+.promotion .swiper-pagination .swiper-pagination-bullet {
+  background-color: #f6f5ef;
+  background-image: url("../images/promotion_slide_pager.png");
+  width: 13px;
+  height: 12px;
+  margin-right: 6px;
+}
+.promotion .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url("../images/promotion_slide_pager_on.png");
+}
+.promotion .swiper-button-prev,
+.promotion .swiper-button-next {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  top: 300px;
+  z-index: 1;
+  color: #333;
+}
+.promotion .swiper-button-prev {
+  left: 50%;
+  margin-left: -480px;
+}
+.promotion .swiper-button-next {
+  right: 50%;
+  margin-right: -480px;
+}
+.promotion .swiper-button-prev:hover,
+.promotion .swiper-button-next:hover {
+  background-color: #333;
+  color: #fff;
+}
+.promotion .swiper-button-prev::after,
+.promotion .swiper-button-next::after {
+  display: none;
+}
+

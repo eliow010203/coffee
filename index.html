@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="./css/main.css" type="text/css">
 
   <!-- 스와이프 -->
-  <script src="./script/jquery.flexslider.js"></script>
+  <script src="./script/swiper.js"></script>
 
   <!-- 자동 접두사 -->
   <script src="./script/prefixfree.min.js"></script>
@@ -53,6 +53,11 @@
 
   <!-- 메인 스크립트 -->
   <script src="./script/main.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
 </head>
 <body>
   
@@ -324,8 +329,6 @@
               </div>
             </div>
           </li>
-
-
         </ul>
       </nav>
   </div>
@@ -358,15 +361,65 @@
       </section>
 
 
-      <section class="con2">
-        <div>
+      <section class="notice">
+        <div class="n_inner">
+          <div class="n_inner__left">
+            <h2>공지사항</h2>
 
+            <div class="swiper s_notice">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="javascript:void(0)" title="">크리스마스 & 연말연시 매장 영업시간 변경 안내</a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" title="">[당첨자 발표] 커피 영수증 이벤트</a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" title="">애플리케이션 버전 업데이트 안내</a></div>
+                <div class="swiper-slide"><a href="javascript:void(0)" title="">[당첨자 발표] 전자영수증 이벤트</a></div>
+              </div>
+            </div>
+            <a href="#" title="">
+              <span class="material-icons addicon">
+                add_circle
+              </span>
+            </a>
+            
+          </div>
+          <div class="n_inner__right">
+            <h2>커피 프로모션</h2>
+            <i class="material-icons">upload</i>
+          </div>
         </div>
       </section>
 
-      <section class="con3">
-        <div>
-          
+      <!-- 프로모션 -->
+      <section class="promotion">
+        <div class="proslide">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide1.jpg" alt="온라인 샵 런칭 기념, 민트 초코 브라우니 무료! 기간: 2023년 3월 3일 ~ 2023년 3월 31일" />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide2.jpg" alt="뉴이어, 헤로피 커피와 함께 즐겁고 활기차게 시작하세요! 기간: 2023년 1월 1일 ~ 2월 14일" />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide3.jpg" alt="따뜻한 아메리카노를 주문하면, 달콤한 초코칩 쿠기 1+1 기간: 2025년 12월 16일 하루만" />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide4.jpg" alt="행사 기간동안 음료 주문시, 모든 디저트 80% 할인! 기간: 2023년 4월 1일 ~ 2024년 4월 1일" />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide5.jpg" alt="골드 회원 가입시, 따뜻한 코코아를 무료로 드립니다. 기간: 2024년 1월 24일 ~ 1월 30일" />
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev">
+          <span class="material-icons">arrow_back</span>
+        </div>
+        <div class="swiper-button-next">
+          <span class="material-icons">arrow_forward</span>
         </div>
       </section>
 
@@ -432,5 +485,37 @@
     <address></address>
   </footer>
   
+
+  <script>
+    var swiper = new Swiper(".s_notice", {
+      direction: "vertical",
+      loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+    });
+
+  new Swiper('.proslide', {
+  // direction: 'horizontal', // 수평 슬라이드
+  autoplay: { // 자동 재생 여부
+    delay: 5000, // 5초마다 슬라이드 바뀜
+    disableOnInteraction: false,
+  },
+  loop: true, // 반복 재생 여부
+  slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  pagination: { // 페이지 번호 사용
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소
+    clickable: true // 사용자의 페이지 번호 제어 여부
+  },
+  navigation: { // 슬라이드 이전/다음 버튼 사용
+    prevEl: '.promotion .swiper-button-prev', // 이전 버튼 요소
+    nextEl: '.promotion .swiper-button-next' // 다음 버튼 요소
+  }
+});
+  </script>
+
 </body>
 </html>
