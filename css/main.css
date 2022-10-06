@@ -41,7 +41,7 @@ main{padding-top: 120px;}
   position: absolute;
 }
 
-.title{
+.visual .title{
   top: 40px;
   left: -10px;
 }
@@ -71,19 +71,21 @@ main{padding-top: 120px;}
   left: 275px;
 }
 
-.detail_btn{
+.btn{
   width: 130px;
   padding: 10px;
-  border: 4px;
-  border: 2px solid #592b18;
   font-size: 16px;
   font-weight: 700;
   text-align: center;
   display: block;
   transition: 0.4s;
-  color: #592b18;
   transform: translateX(130px);
   border-radius: 5px;
+}
+
+.detail_btn{
+  border: 2px solid #592b18;
+  color: #592b18;
 }
 
 .detail_btn:hover{
@@ -134,20 +136,8 @@ main{padding-top: 120px;}
 .s_notice .swiper-slide {
   text-align: center;
   font-size: 10px;
-  /* background-color: #fff; */
-
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
   align-items: center;
 }
 
@@ -197,6 +187,8 @@ main{padding-top: 120px;}
 .n_inner__right i{
   font-size: 30px;
   padding: 15px 0px 0px 20px;
+  user-select: none;
+  cursor: pointer;
 }
 
 /* 프로모션 서식 */
@@ -208,11 +200,15 @@ main{padding-top: 120px;}
   overflow: hidden;
   position: relative;
   height: 663px;
-  transition: height .4s;
+  transition: 0.4s;
 }
-.promotion.hide {
-  height: 0;
+
+/* 버튼클릭시 사용 할 서식 */
+.hide{
+  height: 0px !important;
 }
+/*  */
+
 .promotion .proslide {
   width: calc(819px * 3 + 10px * 2);
   height: 553px;
@@ -228,15 +224,7 @@ main{padding-top: 120px;}
 }
 
 .promotion .btn{
-  width: 130px;
-  padding: 10px;
-  border: 4px;
   border: 2px solid #333;
-  font-size: 16px;
-  font-weight: 700;
-  text-align: center;
-  display: block;
-  transition: 0.4s;
   color: #333;
   margin: 0px auto;
   border-radius: 5px;
@@ -291,4 +279,376 @@ main{padding-top: 120px;}
 .promotion .swiper-button-next::after {
   display: none;
 }
+
+
+/* 리워드 서식 */
+
+.reward{
+  height: 241px;
+  background: linear-gradient(90deg, rgba(39,39,39,1) 50%, rgba(213,199,152,1) 50%);
+}
+
+.reward_inner{
+  background-image: url(../images/rewards.jpg);
+  background-repeat: no-repeat;
+  width: 1100px;
+  height: 241px;
+  margin: 0px auto;
+  position: relative;
+}
+
+.reward .btn_group{
+  position: absolute;
+  height: 100px;
+  width: 250px;
+  right: 10px;
+  bottom: 30px;
+}
+
+.reward .btn_group .btn{
+  border: #333 2px solid;
+  color: #333;
+  margin: 3px;
+  display: inline-block;
+  transform: translateX(-0px);
+}
+
+.reward .btn_group .btn:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+/* 회원가입 */
+.reward .btn_group .btn:first-child{
+  background-color: #333;
+  color: #fff;
+  width: 100px;
+}
+
+.reward .btn_group .btn:first-child:hover{
+  background: none;
+  color: #333;
+  width: 100px;
+}
+
+/* 로그인 */
+.reward .btn_group .btn:nth-child(2){
+  width: 80px;
+}
+
+/* e-gift */
+.reward .btn_group .btn:last-child{
+  width: 214px;
+}
+
+/* 유튜브 영상 콘텐츠 서식 */
+
+.movie{
+  height: 700px;
+  width: 100%;
+  background-color: #222;
+  position: relative;
+}
+
+.movie h2{
+  display: none;
+}
+
+.movie .m_inner{
+  height: 100%;
+  width: 1100px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 10;
+}
+
+.movie .m_inner img{
+  position: absolute;
+  
+}
+
+.m_img1{
+  left: -60px;
+  top: 30px;
+  animation-name: ob_motion;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+.m_img2{
+  left: 40px;
+  top: 400px;
+  animation-name: ob_motion;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+.m_img3{
+  right: 0px;
+  bottom: -80px;
+  animation-name: ob_motion;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes ob_motion {
+  0%{
+    transform: translateY(-5px);
+  }
+  100%{
+    transform: translateY(5px);
+  }
+}
+
+.youtube{
+  width: 100%;
+  height: 700px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+
+.youtube video{
+  width: 100%;
+  transform: translateY(-150px);
+  opacity: .8;
+}
+
+.movie .cover{
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/video_cover_pattern.png);
+  z-index: 9;
+  position: absolute;
+}
+
+/* 아이스커피 블랜드 */
+.season-product{
+  background-image: url(../images/season_product_bg.jpg);
+  height: 400px;
+  width: 100%;
+}
+
+.season-product h2{
+  display: none;
+}
+
+.season-product .inner{
+  width: 1100px;
+  height: 100%;
+  margin: 0px auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 커피 이미지 */
+.season-product .coffee01{
+  position: absolute;
+}
+
+/* 커피 타이틀 */
+.season-product .coffee02{
+  position: absolute;
+  width: 480px;
+  top: 110px;
+  right: 100px;
+}
+.season-product .coffee02 img:first-child{
+  margin-bottom: 10px;
+}
+
+/* 자세히 보기 버튼 */
+.season-product .coffee03{
+  position: absolute;
+  top: 250px;
+  right: 550px;
+}
+
+.season-product .btn{
+  margin: 0px;
+  color: #333;
+  border: #333 solid 2px;
+  transition: 0.2s;
+}
+
+.season-product .btn:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+/* 헤로피 리저브 커피 */
+
+.heropy-coffee{
+  width: 100%;
+  height: 400px;
+  background-image: url(../images/reserve_bg.jpg);
+}
+
+.heropy-coffee .inner{
+  margin: 0px auto;
+  width: 1100px;
+  position: relative;
+}
+
+.heropy-coffee .reserve-logo{
+  position: absolute;
+  top: 110px;
+  left: 0px;
+}
+
+.heropy-coffee .text-group{
+  position: absolute;
+  top: 124px;
+  left: 208px;
+}
+
+.heropy-coffee .product{
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.heropy-coffee .btn{
+  margin: 0px;
+  color: #fff;
+  border: #fff solid 2px;
+  transition: 0.2s;
+  transform: translateX(0px);
+}
+
+.heropy-coffee .btn:hover{
+  background-color: #fff;
+  color: #333;
+}
+
+/* 메뉴 */
+
+.pick-your-favorite {
+  background-image: url("../images/favorite_bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.pick-your-favorite .inner {
+  padding: 110px 0;
+  width: 1100px;
+  margin: 0px auto;
+}
+.pick-your-favorite .text-group {
+  width: 362px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.pick-your-favorite .text-group img:first-child{
+  margin-bottom: 30px;
+}
+.pick-your-favorite .text-group .title {
+  margin-bottom: 40px;
+}
+.pick-your-favorite .text-group .description {
+  margin-bottom: 40px;
+}
+
+.pick-your-favorite .btn{
+  margin: 0px;
+  color: #fff;
+  border: #fff solid 2px;
+  transition: 0.2s;
+  transform: translateX(0px) translateY(20px);
+}
+
+.pick-your-favorite .btn:hover{
+  background-color: #fff;
+  color: #333;
+}
+
+/* 리저브 스토어 */
+.reserve-store{
+  background-image: url(../images/reserve_store_bg.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.reserve-store .inner{
+  height: 600px;
+}
+
+/* 매장찾기 */
+.find-store {
+  background-image: url("../images/find_store_bg.jpg");
+}
+.find-store .inner {
+  position: relative;
+  height: 400px;
+  width: 1100px;
+  margin: 0px auto;
+}
+.find-store .texture1 {
+  position: absolute;
+  top: 0;
+  left: 400px;
+}
+.find-store .texture2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.find-store .picture1 {
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgba(0,0,0,.5);
+  position: absolute;
+  top: -60px;
+  left: 0;
+}
+.find-store .picture2 {
+  border-radius: 50%;
+  box-shadow: 2px 2px 8px 0 rgba(0,0,0,.5);
+  position: absolute;
+  top: 150px;
+  left: 250px;
+}
+.find-store .text-group {
+  position: relative;
+  top: 120px;
+  left: 550px;
+  width: 400px;
+  height: 200px;
+}
+.find-store .text-group .title {
+  position: absolute;
+  top: 0px;
+}
+.find-store .text-group .description {
+  position: absolute;
+  top: 80px;
+}
+
+.find-store .btn{
+  margin: 0px;
+  color: #333;
+  border: #333 solid 2px;
+  transition: 0.2s;
+  transform: translateX(0px) translateY(160px);
+}
+
+.find-store .btn:hover{
+  background-color: #333;
+  color: #fff;
+}
+
+
+
+
+
+
 
