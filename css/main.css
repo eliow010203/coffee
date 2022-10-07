@@ -3,6 +3,10 @@
 
 main{padding-top: 120px;}
 
+main h2{
+  display: none;
+}
+
 .badges{
   width: 130px;
   position: fixed;
@@ -102,6 +106,10 @@ main{padding-top: 120px;}
   height: 62px;
   background: rgb(51,51,51);
   background: linear-gradient(90deg, rgba(51,51,51,1) 50%, rgba(246,245,239,1) 50%);
+}
+
+.notice h2{
+  display: block;
 }
 
 .n_inner{
