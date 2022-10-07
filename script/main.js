@@ -1,6 +1,13 @@
 
 
 const badgeEl = document.querySelector('.badges');
+const topBtnEl = document.querySelector('.top_btn')
+
+topBtnEl.addEventListener('click',function(){
+  gsap.to(window, .6, { //브라우저를 선택하여 0.6초만에
+    scrollTo:0 //스크롤 끝까지 올라간다
+  })
+})
 
 window.addEventListener('scroll', function(e) {
   console.log(window.scrollY)
@@ -10,11 +17,21 @@ window.addEventListener('scroll', function(e) {
       opacity:0,
       display:'none'
     })
+
+    gsap.to(topBtnEl,0.1,{
+      opacity:1,
+      
+    })
   }else{
     // badgeEl.style.display='block'
     gsap.to(badgeEl,0.3,{
       opacity:1,
       display:'block'
+    })
+
+    gsap.to(topBtnEl,0.1,{
+      opacity:0,
+      
     })
   }
 })
@@ -33,7 +50,6 @@ const promotionEl = document.querySelector('section.promotion');
 const buttonEl = document.querySelector('.toggle_btn');
 let keypage = 0;
 
-console.log(promotionEl.classList)
 buttonEl.addEventListener('click', function() {
   if(keypage==0) {
     // 높이가 0이되어야
@@ -46,57 +62,20 @@ buttonEl.addEventListener('click', function() {
   }
 })
 
+// 6, 7, 8, 10콘텐츠가 화면의 80%지점에 보일 때 동작하는 스크립트
 
-// 저거뭐냐 저거 어.... 그 뭐엿더라 그거 그 아 아이스 뭐시기
-const ice01 = document.querySelector('.coffee01');
-const ice02 = document.querySelector('.coffee02');
-const ice03 = document.querySelector('.coffee03');
 
-window.addEventListener('scroll', function anime(e) {
-  console.log(window.scrollY)
+const spyEl = document.querySelectorAll('section.scroll-spy')
 
-  // 커피 이미지
+spyEl.forEach(function(spyEl){
 
-  if(1660<=this.window.scrollY){
-    gsap.to(ice01,0.6,{
-      opacity:1,
-      display:'block',
-      left: 0
-    })
-  }else{
-    gsap.to(ice01,0.6,{
-      opacity:0,
-      display:'none',
-      left: -50
-    })
-  }
-
-  // 커피 택스트
-  if(1660<=this.window.scrollY){
-    gsap.to(ice02,0.6,{
-      delay:.3,
-      opacity:1,
-      right: 100
-    })
-  }else{
-    gsap.to(ice02,0.6,{
-      delay:.6,
-      opacity:0,
-      right: 50
-    })
-  }
-
-  // 커피 더보기
-  if(1660<=this.window.scrollY){
-    gsap.to(ice03,0.6,{
-      opacity:1,
-      right: 550
-    })
-  }else{
-    gsap.to(ice03,0.6,{
-      opacity:0,
-      right: 500
-    })
-  }
-
+  new ScrollMagic
+  .Scene({
+    triggerElement:spyEl,
+    triggerHook:0.8 //화면의 80%지점에서 동작
+  })
+  .setClassToggle(spyEl, 'show') //show라는 클래스를 적용하거나 해제하기
+  .addTo(new ScrollMagic.Controller()); //컨트롤러에 장면을 할당한다.
 })
+
+
