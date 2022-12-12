@@ -122,6 +122,10 @@ header .inner h1{
 
 /* 서브메뉴 박스 */
 
+.item_content:hover{
+  display: block;
+}
+
 .item_content{
   width: 100%;
   position: fixed;
